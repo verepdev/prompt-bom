@@ -1,0 +1,22 @@
+# Internal — Claude context + PM doc, never commit (claude/standards/PROJECT-TEMPLATE.md)
+CLAUDE.md
+PROJECT.md
+
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+!.vscode/extensions.json
+
+# Build artifacts (test outputs)
+/tmp/
+*.spdx.json.tmp

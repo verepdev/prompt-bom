@@ -1,0 +1,31 @@
+[package]
+name = "prompt-bom"
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.75"
+authors = ["Göksel Verep <verepdev@gmail.com>"]
+description = "AI-BOM emitter — sign and verify SPDX-AI provenance for AI-assisted code"
+license = "MIT"
+repository = "https://github.com/verepdev/prompt-bom"
+readme = "README.md"
+keywords = ["ai", "aibom", "spdx", "compliance", "provenance"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+walkdir = "2"
+ignore = "0.4"
+git2 = { version = "0.18", default-features = false }
+blake3 = "1"
+sha2 = "0.10"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+thiserror = "1"
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "3"
+proptest = "1"
+tempfile = "3"
