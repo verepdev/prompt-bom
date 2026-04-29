@@ -4,4 +4,5 @@
 //! rules: services own *what* the app does, depend only on `repos` and
 //! `schemas`.
 
+pub mod blame;
 pub mod transcript;

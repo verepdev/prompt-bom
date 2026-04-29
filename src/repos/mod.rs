@@ -4,4 +4,5 @@
 //! rules: repos return plain data (no service-layer types) and own all
 //! filesystem, git, and external IO.
 
+pub mod git_repo;
 pub mod jsonl_reader;
