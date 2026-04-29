@@ -65,3 +65,32 @@ pub struct EditOperation {
     #[serde(default)]
     pub replace_all: bool,
 }
+
+/// A line range in a repository file that an `AttributionRecord` resolved to.
+///
+/// `start_line` and `end_line` are 1-based and inclusive. `file_path` is
+/// stored relative to the repository root so the same record stays valid
+/// regardless of where the repo is checked out.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct AnnotatedRange {
+    pub file_path: PathBuf,
+    pub start_line: usize,
+    pub end_line: usize,
+    pub content_hash: String,
+    pub attribution_uuid: String,
+    pub model: String,
+    pub session_id: String,
+    pub timestamp: String,
+    pub blame: Option<BlameInfo>,
+}
+
+/// Git-blame summary for the lines covered by an `AnnotatedRange`.
+///
+/// `None` on the parent `AnnotatedRange` means the file isn't tracked yet
+/// or no commit has touched the matched lines.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct BlameInfo {
+    pub first_commit_oid: String,
+    pub last_commit_oid: String,
+    pub author_emails: Vec<String>,
+}
