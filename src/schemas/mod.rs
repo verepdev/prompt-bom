@@ -5,3 +5,4 @@
 //! these definitions, never hand-duplicate types.
 
 pub mod attribution;
+pub mod spdx;
