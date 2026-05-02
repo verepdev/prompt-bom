@@ -10,15 +10,35 @@ AI-assisted code is now in production codebases everywhere, and there's no porta
 
 ## Status
 
-Pre-release scaffold (v0.0.1). No usable features yet — see milestones in repo.
+Pre-release scaffold (v0.0.1). Emit pipeline functional; signing and verification land in later milestones.
 
 ## Install
+
+```bash
+cargo build --release
+# binary at target/release/prompt-bom
+```
 
 Once published:
 
 ```bash
 cargo install prompt-bom
 ```
+
+## Usage
+
+```bash
+prompt-bom emit \
+    --transcript path/to/claude-session.jsonl \
+    --repo path/to/repo \
+    --out spdx.json \
+    --name my-project \
+    --created 2026-04-28T00:00:00Z
+```
+
+The pipeline parses the Claude Code session JSONL, joins each AI tool-use record with the current file content via substring match and git blame, then writes a deterministic SPDX 2.3 JSON document to `--out`. Pin `--created` for byte-stable output across runs (e.g., from CI).
+
+AI provenance is carried as structured annotations on SPDX `Snippet` entries: `annotationType: OTHER`, `annotator: "Tool: prompt-bom-<version>"`, `comment: <JSON-encoded AiProvenance>` containing `model`, `sessionId`, `attributionUuid`, `timestamp`, and optional `blame` summary. The document remains valid SPDX 2.3; downstream tools that don't understand the extension simply ignore the annotation comment.
 
 ## License
 

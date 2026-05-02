@@ -1,0 +1,147 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "demo",
+  "documentNamespace": "https://verepdev.github.io/demo/0123456789abcdef",
+  "creationInfo": {
+    "creators": [
+      "Tool: prompt-bom-test"
+    ],
+    "created": "2026-04-28T09:00:00Z"
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-Project",
+      "name": "demo",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "primaryPackagePurpose": "SOURCE",
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ],
+  "files": [
+    {
+      "SPDXID": "SPDXRef-File-1",
+      "fileName": "./src/lib.rs",
+      "checksums": [
+        {
+          "algorithm": "BLAKE3",
+          "checksumValue": "521715db23f06e6f0268276d595fe0bf9fa9d3448155adb4d73b8f619de29c4d"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "SPDXID": "SPDXRef-File-2",
+      "fileName": "./src/main.rs",
+      "checksums": [
+        {
+          "algorithm": "BLAKE3",
+          "checksumValue": "2d1ebfa706ba230165250f744796a92accba5e1b6fa357983b65319da33f8e93"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ],
+  "snippets": [
+    {
+      "SPDXID": "SPDXRef-Snippet-1",
+      "snippetFromFile": "SPDXRef-File-1",
+      "ranges": [
+        {
+          "startPointer": {
+            "reference": "SPDXRef-File-1",
+            "lineNumber": 1
+          },
+          "endPointer": {
+            "reference": "SPDXRef-File-1",
+            "lineNumber": 1
+          }
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationType": "OTHER",
+          "annotator": "Tool: prompt-bom-test",
+          "annotationDate": "2026-04-28T09:00:01Z",
+          "comment": "{\"model\":\"claude-sonnet-4-6\",\"sessionId\":\"sess-1\",\"attributionUuid\":\"u-1\",\"timestamp\":\"2026-04-28T09:00:01Z\"}"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Snippet-2",
+      "snippetFromFile": "SPDXRef-File-1",
+      "ranges": [
+        {
+          "startPointer": {
+            "reference": "SPDXRef-File-1",
+            "lineNumber": 5
+          },
+          "endPointer": {
+            "reference": "SPDXRef-File-1",
+            "lineNumber": 7
+          }
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationType": "OTHER",
+          "annotator": "Tool: prompt-bom-test",
+          "annotationDate": "2026-04-28T09:00:02Z",
+          "comment": "{\"model\":\"claude-sonnet-4-6\",\"sessionId\":\"sess-1\",\"attributionUuid\":\"u-2\",\"timestamp\":\"2026-04-28T09:00:02Z\",\"blame\":{\"firstCommitOid\":\"0000000000000000000000000000000000000001\",\"lastCommitOid\":\"0000000000000000000000000000000000000002\",\"authorEmails\":[\"dev@example.com\"]}}"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Snippet-3",
+      "snippetFromFile": "SPDXRef-File-2",
+      "ranges": [
+        {
+          "startPointer": {
+            "reference": "SPDXRef-File-2",
+            "lineNumber": 1
+          },
+          "endPointer": {
+            "reference": "SPDXRef-File-2",
+            "lineNumber": 1
+          }
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "annotations": [
+        {
+          "annotationType": "OTHER",
+          "annotator": "Tool: prompt-bom-test",
+          "annotationDate": "2026-04-28T09:00:03Z",
+          "comment": "{\"model\":\"claude-sonnet-4-6\",\"sessionId\":\"sess-1\",\"attributionUuid\":\"u-3\",\"timestamp\":\"2026-04-28T09:00:03Z\"}"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-Project"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Project",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Project",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-2"
+    }
+  ]
+}

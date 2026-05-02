@@ -18,4 +18,7 @@ pub enum AppError {
 
     #[error("config: {0}")]
     Config(String),
+
+    #[error("cli: {0}")]
+    Cli(String),
 }

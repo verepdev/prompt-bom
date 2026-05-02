@@ -5,4 +5,5 @@
 //! `schemas`.
 
 pub mod blame;
+pub mod spdx_emit;
 pub mod transcript;
